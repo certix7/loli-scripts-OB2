@@ -1,0 +1,73 @@
+OPENBULLET 2  | LOLI SCRIPTS CRASH COURSE LESSEN (1) for Beginners
+
+___________________________________________________________________________
+montu sec  
+montu  --- security
+____________________________________________________________________________
+
+who am i am programer and pentester  master {python ,php,sql,bash,front end staff,}
+if you like my video please like this video and subscribe channel
+present how to install openbullet2 on linux system
+
+____________________________________________________________________________
+ LINKS @ codes
+____________________________________________________________________________
+
+SKI NET UPLOAD NOT THAT ONE OF TERMINATOR THIS FOR DEV
+ 
+https://siasky.net/
+
+
+
+LOG "------------"
+
+LOG "------------"
+
+LOG "#######################"
+
+CLOG YellowGreen "HI EVERY ONE "
+
+REPEAT 5
+CLOG Yellow "#######################"
+END
+
+
+x="this man is my mentor"
+
+print (x)
+
+
+result="this man is my teacher".upper()
+
+print(result)
+
+
+
+BLOCK:ToUppercase
+  input = $"this man is my teacher"
+  => VAR @result
+ENDBLOCK
+
+
+
+
+
+REPEAT 10
+CLOG Yellow "#######################"
+BLOCK:ToUppercase
+  input = $"this man is my teacher"
+  => VAR @result
+ENDBLOCK
+
+END
+
+
+
+____________________________________________________________________________
+
+in the next video i'm gonna make a simple config in OB2
+if you have any problem using OB2. You can ask me
+
+
+
+
