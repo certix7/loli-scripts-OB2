@@ -1,0 +1,60 @@
+
+CLOG Yellow "=============1=================="
+BLOCK:HttpRequest
+  url = "https://api.adviceslip.com/advice"
+  TYPE:STANDARD
+  $""
+  "application/x-www-form-urlencoded"
+ENDBLOCK
+
+CLOG Yellow "============2================"
+
+
+BLOCK:ConstantString
+LABEL:my_date
+  value = @data.HEADERS["Date"]
+  => CAP @date
+ENDBLOCK
+CLOG Yellow "============3================"
+//this is comment
+
+BLOCK:ConstantString
+LABEL:my_server
+  value = @data.HEADERS["Server"]
+  => CAP @server
+ENDBLOCK
+
+CLOG Yellow "============4================"
+BLOCK:Parse
+LABEL:my_id
+  input = @data.SOURCE
+  jToken = "slip.id"
+  MODE:Json
+  => CAP @id
+ENDBLOCK
+
+CLOG Yellow "=============5=================="
+
+
+BLOCK:Parse
+LABEL:my_advice
+  input = @data.SOURCE
+  jToken = "slip.advice"
+  MODE:Json
+  => CAP @advice
+ENDBLOCK
+CLOG Yellow "=============65=================="
+
+BLOCK:Keycheck
+  KEYCHAIN SUCCESS OR
+    STRINGKEY @data.SOURCE Contains "id"
+    STRINGKEY @data.SOURCE Contains "advice"
+  KEYCHAIN FAIL OR
+    STRINGKEY @data.SOURCE NotEqualTo "id"
+ENDBLOCK
+
+BLOCK:FileAppend
+LABEL:save_my_data
+  path = "/home/cetrix/OP2/OpenBullet2/UserData/results/topresults.txt"
+  content = $"<id>:<advice> \\r\\n"
+ENDBLOCK
