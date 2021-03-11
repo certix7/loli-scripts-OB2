@@ -1,0 +1,138 @@
+
+https://www.w3schools.com/php/php_if_else.asp
+
+https://www.w3schools.com/python/python_conditions.asp
+
+https://docs.python.org/3/tutorial/controlflow.html
+
+
+
+
+
+IF STRINGKEY $"montuaaaa" EqualTo  $"montu"
+LOG "====================================="
+
+BLOCK:HttpRequest
+  url = "https://example.com"
+  TYPE:STANDARD
+  $""
+  "application/x-www-form-urlencoded"
+ENDBLOCK
+
+ELSE IF STRINGKEY $"security" EqualTo     $"security"
+LOG "************************************  "
+BLOCK:HttpRequest
+  TYPE:STANDARD
+  $""
+  "application/x-www-form-urlencoded"
+ENDBLOCK
+
+
+ELSE
+LOG "====================================="
+
+BLOCK:HttpRequest
+  url = "https://bing.com"
+  TYPE:STANDARD
+  $""
+  "application/x-www-form-urlencoded"
+ENDBLOCK
+
+END
+
+
+
+
+
+
+
+
+today we will talk about condations in open bullet2 
+
+before we start in ob2 we should know how this work in other languages 
+check this resources pls
+
+
+lets start
+
+
+
+if 1+1==2:
+  print("true")
+
+
+if "a" in "montu sec":
+  print("true")
+
+
+alpha="o"
+
+if alpha in "montu sec":
+  print("a is here")
+
+
+if condation    // this must be false to run else if
+	do some thing
+else if
+	do some thing
+
+
+IF STRINGKEY $"montuaaaa" EqualTo  $"montu"
+LOG "this is alpha"
+ELSE IF STRINGKEY $"sec" Exists   $"security";
+LOG "this is bravo  "
+END
+
+
+END  its to close your  condation
+ 
+
+so lets use it in real example
+
+
+this is better
+
+
+now he run 
+
+lets run if 
+lets run else if
+
+
+
+
+why is this better than using key check 
+becouse you can use logic with while loops and for loops 
+
+to take the full control and all advantages of open bullet2
+
+
+wait next time to see how to use loops with condations to 
+
+creat so strong config
+
+thank you
+
+
+
+
+
+
+
+
+
+
+------------------------------
+
+
+if condation        //false
+	do some thing
+else if              //false
+	do some thing
+
+else condation
+finally do this
+
+
+'''
+
