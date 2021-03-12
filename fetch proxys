@@ -1,0 +1,110 @@
+
+
+
+
+before we start in ob2 we should watch my video when i talk about condations  
+
+check this resources pls
+
+
+
+you will learn 
+
+1-how to deal with json  with easy trick    
+2-how to use if condation in real example
+3-how to parse result and use it with logic  code
+4-saving data        
+
+lets start
+
+
+this is free api for proxys its public any one can use it 
+
+http://pubproxy.com/api/proxy?api=&type
+
+we will use it to get proxys and fetch http and socks4 and socks5
+
+our logic will be like this
+
+
+you should now creat files to save proxys
+
+creat file with name result and creat empty files with  
+
+
+
+lets save result 
+
+
+perfect its now saved
+
+
+lets do advanced staff
+
+
+
+--------------------------------------------------
+
+main point of all this is 
+----------------------------------------------------
+
+do request
+fetch data
+use this data in logic
+
+get request 
+
+
+ 	if condation        
+		do some thing
+	else if              
+		do some thing
+
+	else condation
+
+		finally do this
+
+
+
+
+
+your request  then use logic
+
+IF STRINGKEY $"http" NotEqualTo   $"http"
+CLOG YellowGreen "-----------------http--------------------"
+ELSE IF STRINGKEY $"socks4" Exists   $"socks4"
+CLOG Yellow "-----------------socks4--------------------"
+ELSE
+CLOG Green "-----------------socks5--------------------"
+END
+
+
+this staff is advanced than key check
+
+may you think code is big but as i mentioned before
+
+
+loli scripts its blocks of code 
+
+and we deal with it like this 
+
+
+lets run our config 
+
+
+so by this way you can do more staff and 
+use its power
+
+
+nots 
+
+in my config there are no hits as normal but it work
+
+this api is free and only for example to show you how i did 
+
+so result not that perfect try paid one
+
+
+
+
+
