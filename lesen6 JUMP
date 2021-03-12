@@ -1,0 +1,75 @@
+hi 
+
+before we start in ob2 
+you should watch my videos when i talk about condations  
+
+you should watch my videos when i talk about LOOPS  
+
+check this resources pls in my youtube chanel
+----------------------------------
+
+
+you will learn 
+
+1-how to use  JUMP in OB2
+
+lets start
+---------------
+
+without JUMP
+
+
+
+
+
+
+
+int number = 0;
+
+IF INTKEY @number LessThan 5
+CLOG Blue "============1==============="
+
+END
+CLOG Red "*********2**************"
+LOG "bravo"
+
+
+
+--------------------------------------------
+
+
+	WE WILL USE JUMP
+
+Jumps to a specified point in the code. 
+Remember to watch out for endless loops! Example:
+
+
+
+
+
+
+lets use this example
+
+
+
+
+
+int number = 0;
+
+IF INTKEY @number LessThan 5
+CLOG Blue "==========================="
+
+JUMP #SKIP 
+END
+
+#SKIP
+CLOG Red "******after JUMP************"
+LOG "bravo"
+
+
+
+
+
+this about jump  you can use it in your config to 
+
+ignore any block of code 
