@@ -1,8 +1,12 @@
 
 
-
-
+example:int
+----------------------------
 int num = 0;
+----------------------------
+example:string
+-------------------------------------------
+string file = "abc.txt";
 
 WHILE INTKEY @num LessThan 5
 CLOG YellowGreen $"===================="
