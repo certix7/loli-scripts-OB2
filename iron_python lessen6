@@ -1,0 +1,34 @@
+
+
+BLOCK:HttpRequest
+LABEL:your_request
+  url = "http://pubproxy.com/api/proxy?api=&type"
+  TYPE:STANDARD
+  $""
+  "application/x-www-form-urlencoded"
+ENDBLOCK
+
+BLOCK:Parse
+LABEL:parse_links
+  input = @data.SOURCE
+  jToken = "data[0].ipPort"
+  MODE:Json
+  => VAR @new_websiteslist
+ENDBLOCK
+// GET MY LIST VARIABLE AND PASS IT TO IRON
+
+BLOCK:Script
+INTERPRETER:IronPython
+INPUT new_websiteslist
+BEGIN SCRIPT
+my_number="111111111"
+random_value= "ABCD"
+time="15/3/2021"
+token=time+my_number+random_value
+my_token = token.encode('ascii')
+result = base64.b64encode(my_token).decode('ascii')
+
+
+END SCRIPT
+OUTPUT ListOfStrings @result
+ENDBLOCK
