@@ -1,0 +1,28 @@
+
+var httpClientHandler = new System.Net.Http.HttpClientHandler();
+if (data.Proxy != null)
+{
+    var webProxy = new System.Net.WebProxy(data.Proxy.Host, data.Proxy.Port);
+    if (data.Proxy.NeedsAuthentication)
+    {
+        webProxy.Credentials = new System.Net.NetworkCredential(data.Proxy.Username, data.Proxy.Password);
+    }
+    httpClientHandler.Proxy = webProxy;
+}
+
+var httpClient = new System.Net.Http.HttpClient(httpClientHandler);
+var httpRequest = new System.Net.Http.HttpRequestMessage();
+httpRequest.RequestUri = new Uri("https://http2.golang.org/reqinfo");
+httpRequest.Version = new Version(2, 0);
+var response = await httpClient.SendAsync(httpRequest);
+data.SOURCE = await response.Content.ReadAsStringAsync();
+
+LOG ""
+LOG "HTTP/2.0 Request Sample"
+CLOG ForestGreen "Received Payload"
+CLOG GreenYellow data.SOURCE
+
+httpClientHandler.Dispose();
+httpClient.Dispose();
+httpRequest.Dispose();
+response.Dispose();
