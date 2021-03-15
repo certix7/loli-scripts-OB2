@@ -1,8 +1,103 @@
 
 
+import os
+
+
+
+alpha=os.system("curl http://******example**********")
+
+print("---------------------------")
+print(type(alpha))
+
+
+
+
+BLOCK:HttpRequest
+LABEL:get proxys
+  url = "http://******example**********"
+  TYPE:STANDARD
+  $""
+  "application/x-www-form-urlencoded"
+ENDBLOCK
+
+BLOCK:Parse
+LABEL:parse_links
+  input = @data.SOURCE
+  jToken = "data[0].ipPort"
+  MODE:Json
+  => VAR @my_proxy
+ENDBLOCK
+
+BLOCK:Script
+INTERPRETER:IronPython
+INPUT my_proxy
+BEGIN SCRIPT
+import base64
+random_value= "ABCD"
+time="15/3/2021"
+token=time+my_proxy+random_value
+
+message = token
+message_bytes = message.encode('ascii')
+base64_bytes = base64.b64encode(message_bytes)
+base64_message = base64_bytes.decode('ascii')
+
+
+END SCRIPT
+OUTPUT String @base64_message
+ENDBLOCK
+
+
+
+
+
+
+"""
+where is the magic
+senario 1
+--------------
+login to site 
+
+
+1-your my_number
+2-token (encoded(number+date+randomvalue))
+
+"""
+
+
+
+
+
+import base64
+my_number="111111111"
+random_value= "ABCD"
+time="15/3/2021"
+token=time+my_number+random_value
+
+message = token
+message_bytes = message.encode('ascii')
+base64_bytes = base64.b64encode(message_bytes)
+base64_message = base64_bytes.decode('ascii')
+
+print(base64_message)
+
+
+
+BLOCK:Script
+INTERPRETER:IronPython
+INPUT my_proxy
+BEGIN SCRIPT
+import montu_sec
+
+a=dosomething(my_proxy)
+
+END SCRIPT
+OUTPUT ListOfStrings @a
+-----------------------------------------------------------------
+-----------------------------------------------------------------------
 BLOCK:HttpRequest
 LABEL:your_request
-  url = "http://pubproxy.com/api/proxy?api=&type"
+  url = "http://******example**********"
   TYPE:STANDARD
   $""
   "application/x-www-form-urlencoded"
